@@ -75,6 +75,8 @@ you have written them. Run the day's tests with `pytest week-NN/day-N -v`.
 | `week-01/` … | One folder per week |
 | `ai/` | The AI roles. Read `ai/README.md` first |
 | `logs/` | Your baseline, your stuck log and your signal log |
+| `shop/` | Helpdesk's world: customers, orders, labelled tickets, refunds |
+| `check_traces.py` | Checks your Langfuse project has each week's work |
 | `SETUP.md` | Day zero |
 | `CUT_LIST.md` | What this course does not teach, and why |
 | `SOURCES.md` | What to read, and what to ignore |

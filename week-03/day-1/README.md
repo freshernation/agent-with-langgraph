@@ -25,6 +25,13 @@ what was saved.
 the customer and by Helpdesk, lives in one thread. In week 1 your `chat` loop carried
 the count between invokes; now the checkpointer carries everything.
 
+### Only named types come back
+
+A checkpoint is data on disk. When LangGraph reads one back it rebuilds Python objects
+only of types you have named as safe — otherwise anyone who could write to the file
+could make your process build anything. Triage is the one class in Helpdesk's state,
+so it goes in `SAFE_TYPES`.
+
 ### A crash is just a stop
 
 If a node raises, the last completed step is already saved. A new process, a new

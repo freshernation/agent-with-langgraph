@@ -8,15 +8,17 @@
     call("add_note", {"title": "x"})                one tool call
     calls([("a", {}), ("b", {"x": 1})])             several tool calls in one turn
 
-Put an exception in the script to make that call fail. After a run,
+Streaming works too: a plain answer arrives word by word, a tool call in one
+piece. Put an exception in the script to make that call fail. After a run,
 model.requests holds what each call was sent, and model.call_count how many.
 """
 
+import json
 from typing import Any
 
 from langchain_core.language_models import BaseChatModel
-from langchain_core.messages import AIMessage, BaseMessage, HumanMessage
-from langchain_core.outputs import ChatGeneration, ChatResult
+from langchain_core.messages import AIMessage, AIMessageChunk, BaseMessage, HumanMessage
+from langchain_core.outputs import ChatGeneration, ChatGenerationChunk, ChatResult
 from langchain_core.utils.function_calling import convert_to_openai_tool
 from pydantic import PrivateAttr
 
@@ -101,3 +103,22 @@ class ScriptedModel(BaseChatModel):
         if isinstance(reply, Exception):
             raise reply
         return ChatResult(generations=[ChatGeneration(message=reply.model_copy(deep=True))])
+
+    def _stream(self, messages: list[BaseMessage], stop=None, run_manager=None, **kwargs):
+        """Streams a plain answer word by word, like a real model; tool calls in one piece."""
+        reply = self._generate(messages, stop=stop, **kwargs).generations[0].message
+        if reply.tool_calls or not isinstance(reply.content, str) or not reply.content:
+            yield ChatGenerationChunk(message=AIMessageChunk(
+                content=reply.content, tool_call_chunks=[
+                    {"name": c["name"], "args": json.dumps(c["args"]), "id": c["id"], "index": i}
+                    for i, c in enumerate(reply.tool_calls)],
+                usage_metadata=reply.usage_metadata))
+            return
+        words = reply.content.split(" ")
+        for number, word in enumerate(words):
+            piece = word if number == len(words) - 1 else word + " "
+            chunk = AIMessageChunk(content=piece,
+                                   usage_metadata=reply.usage_metadata if number == len(words) - 1 else None)
+            if run_manager:
+                run_manager.on_llm_new_token(piece, chunk=ChatGenerationChunk(message=chunk))
+            yield ChatGenerationChunk(message=chunk)

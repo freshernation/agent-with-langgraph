@@ -1,0 +1,2 @@
+# What must never go into the image: at least .venv, .env, .git, instructor,
+# __pycache__ and any .db file.

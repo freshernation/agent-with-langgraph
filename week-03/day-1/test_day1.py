@@ -56,6 +56,21 @@ class TestThreads:
         assert durable.conversation(graph, durable.config_for("c1", "T2")) == ["human: second ticket"]
 
 
+class TestSafeTypes:
+    def test_triage_is_read_back_without_a_warning(self, durable, helpdesk, tmp_path, caplog):
+        path = str(tmp_path / "c.db")
+        config = durable.config_for("c1", "T11")
+        graph = helpdesk.build_helpdesk(ScriptedModel([form(kind="other")]),
+                                        checkpointer=durable.open_checkpointer(path))
+        helpdesk.answer(graph, "c1", "password?", config)
+        reopened = helpdesk.build_helpdesk(ScriptedModel(), checkpointer=durable.open_checkpointer(path))
+        assert reopened.get_state(config).values["triage"].kind == "other"
+        assert "unregistered type" not in caplog.text, (
+            "LangGraph warned that it rebuilt a Triage it was never told was safe. A "
+            "future version will refuse. Name it in SAFE_TYPES."
+        )
+
+
 class TestARestart:
     def test_it_carries_on_where_it_stopped(self, durable, helpdesk, tmp_path):
         path = str(tmp_path / "c.db")
