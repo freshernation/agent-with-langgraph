@@ -51,6 +51,28 @@ Need something that is not here? `ai/librarian.md`.
 
 **Ignore for now:** the long-term store, `interrupt_before` on compile, Postgres.
 
-## Weeks 4 to 6
+## Week 4 — Measure it
 
-Chosen when each week is published.
+| Read | Why |
+|---|---|
+| [Anthropic — Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) | What to grade, and how |
+| [Hamel Husain — Your AI product needs evals](https://hamel.dev/blog/posts/evals/) | An engineer's account of building them for real |
+| [Langfuse — LLM-as-a-judge](https://langfuse.com/docs/evaluation/evaluation-methods/llm-as-a-judge) | A judge, and its limits |
+| [Langfuse — Experiments via the SDK](https://langfuse.com/docs/evaluation/experiments/experiments-via-sdk) | Running a dataset with your evaluators |
+
+**Ignore for now:** generated test cases, evaluation leaderboards, LangSmith evals.
+
+## Week 5 — Ship it
+
+| Read | Why |
+|---|---|
+| [LangGraph — Streaming](https://docs.langchain.com/oss/python/langgraph/streaming) | The stream modes, and filtering by node |
+| [MDN — Using server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events) | The format your stream speaks |
+| [Docker — Building best practices](https://docs.docker.com/build/building/best-practices/) | The build cache, and not running as root |
+| [Google SRE — Postmortem culture](https://sre.google/sre-book/postmortem-culture/) | Writing an incident without blame |
+
+**Ignore for now:** WebSockets, Kubernetes, the hosted LangGraph Platform.
+
+## Week 6 — Your agent, and the interview
+
+No new reading. Reread what your own project needs, and `ai/interviewer.md`.

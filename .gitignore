@@ -12,6 +12,8 @@ __pycache__/
 notes.json
 memory.json
 outbox.json
+shop.json
+labelled.json
 trace.json
 *.db
 *.sqlite

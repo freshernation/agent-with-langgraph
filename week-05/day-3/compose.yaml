@@ -1,0 +1,8 @@
+# Your compose file.
+#   - a service "api": build from context ../.. with dockerfile
+#     week-05/day-3/Dockerfile; port 8000; environment: DATABASE_URL, the model
+#     provider and keys, the Langfuse keys, LANGSMITH_TRACING "false" - every
+#     secret as ${NAME}, never written here; a named volume "data" at /data;
+#     restart unless-stopped
+#   - deep track: a "postgres" service (postgres:18) under profiles: ["postgres"],
+#     with its own volume

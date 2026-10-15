@@ -64,3 +64,13 @@ def test_connect_defaults_to_scripted(monkeypatch):
 def test_connect_refuses_nonsense():
     with pytest.raises(ValueError):
         connect("nonsense")
+
+
+def test_streams_words():
+    pieces = [chunk.content for chunk in ScriptedModel(say("on its way")).stream("x")]
+    assert "".join(pieces) == "on its way" and len([p for p in pieces if p]) == 3
+
+
+def test_streams_a_tool_call_in_one_piece():
+    chunks = list(ScriptedModel(call("add", {"a": 1})).bind_tools([add]).stream("x"))
+    assert chunks[0].tool_calls[0]["args"] == {"a": 1}
