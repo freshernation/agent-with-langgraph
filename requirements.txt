@@ -1,0 +1,23 @@
+# Everything week 1 needs. Later weeks add to this file as they arrive.
+pytest>=9.0
+python-dotenv>=1.0
+
+# The course's own packages - llm, desk and models - installed in place.
+-e .
+
+# The hand-written model layer (llm/) talks to the providers' own SDKs.
+anthropic>=1.13
+openai>=3.29
+
+# The framework. LangGraph for the graph; LangChain only where LangGraph needs it.
+langgraph>=1.2,<2
+langchain>=1.4,<2
+langchain-core>=1.6,<2
+langchain-anthropic>=1.7,<2
+langchain-openai>=1.7,<2
+
+# Tracing and evals. Pinned below 5 until Langfuse 5 has settled.
+langfuse>=4.18,<5
+
+# Studio, through the local development server (week 1 day 4).
+langgraph-cli[inmem]>=0.4,<0.5
