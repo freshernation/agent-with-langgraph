@@ -50,5 +50,5 @@ Project 2 passes with **3 or more in every phase**.
 
 ## Instructor: framing week 6
 
-> **Next week is yours.** An agent for a problem you choose, built in four days with
-> everything from this course, a portfolio page, and a mock interview on Friday.
+> **Next week Helpdesk remembers.** Facts about a customer that outlive a ticket, what
+> happened last time, and house rules only staff may write — and how it forgets.

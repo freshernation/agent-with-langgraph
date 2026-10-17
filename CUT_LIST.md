@@ -12,7 +12,6 @@ Every item below is real, and every one is out.
 | **LangSmith tracing and evals** | One tracing tool, properly — and the open-source one. Studio is used with LangSmith tracing off |
 | **The hosted LangGraph Platform** | A paid plan. `langgraph dev` shows you its API for free |
 | **LangChain beyond what LangGraph needs** — chains as a subject, its agent zoo, its retrievers | You use LangChain's models, messages and tools. The rest is another library |
-| **The long-term memory store** | Checkpoints are the lesson. The store is a week of its own |
 | **Fine-tuning, front ends, Kubernetes** | Not what this course is about |
 
 ---
@@ -40,7 +39,7 @@ tools has been measured and has failed. You will know how to measure that by wee
 
 1. **Subgraphs**, then one multi-agent pattern — after you have a single agent's eval
    failing for a reason a second agent would fix.
-2. **The long-term store**, for memory that outlives a thread.
-3. **Running it for other people** — Agent In Production, if you have not taken it.
-4. **Retrieval** as a tool in your graph.
-5. **A second tracing tool**, to find out which of your habits were about the first.
+2. **Running it for other people** — Agent In Production, if you have not taken it.
+3. **Retrieval** as a tool in your graph — and episodes recalled by embeddings instead
+   of word overlap.
+4. **A second tracing tool**, to find out which of your habits were about the first.

@@ -49,7 +49,7 @@ Need something that is not here? `ai/librarian.md`.
 | [LangGraph — Time travel](https://docs.langchain.com/oss/python/langgraph/use-time-travel) | Replay and fork |
 | [Langfuse — Sessions](https://langfuse.com/docs/observability/features/sessions) | One conversation, many traces |
 
-**Ignore for now:** the long-term store, `interrupt_before` on compile, Postgres.
+**Ignore for now:** `interrupt_before` on compile, Postgres. The long-term store is week 6.
 
 ## Week 4 — Measure it
 
@@ -73,6 +73,17 @@ Need something that is not here? `ai/librarian.md`.
 
 **Ignore for now:** WebSockets, Kubernetes, the hosted LangGraph Platform.
 
-## Week 6 — Your agent, and the interview
+## Week 6 — Memory that lasts
+
+| Read | Why |
+|---|---|
+| [LangGraph — Memory](https://docs.langchain.com/oss/python/langgraph/memory) | Short-term and long-term, and the store |
+| [Anthropic — Effective context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) | What deserves a place in the prompt |
+| [Sumers et al. — Cognitive architectures for language agents](https://arxiv.org/abs/2309.02427) | Where "facts, episodes, procedures" comes from |
+| [ICO — Right to erasure](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-erasure/) | Why forgetting is a feature |
+
+**Ignore for now:** memory frameworks, vector databases for memory, shared memory between agents.
+
+## Week 7 — Your agent, and the interview
 
 No new reading. Reread what your own project needs, and `ai/interviewer.md`.

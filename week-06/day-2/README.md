@@ -1,43 +1,49 @@
-# Days 2 and 3 — Build it, test it, measure it
+# Day 2 — Facts go stale
 
-> **By the end of Wednesday** your agent runs, has at least five offline tests of its
-> own, a labelled eval set of ten or more, and a report of how it scored.
+> **By the end of today** a changed fact replaces the old one without losing it, the
+> prompt carries only the freshest few, and a customer can ask to be forgotten.
+
+---
+
+## Read first
+
+- [ ] Anthropic — [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents), the section on memory · 15 min
+- [ ] ICO — [Right to erasure](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-erasure/), the first section · 10 min
 
 ---
 
 ## What you need to know
 
-### It lives in `project/`
+### Replace, but keep the history
 
-`graph.py` with `build_graph(model, checkpointer=None)`, your tests beside it, and
-`evals.py`. Today's tests check the shape and run **your** tests; what the agent does
-is yours.
+"Moving to Leeds" replaces "lives in Bristol" — but the old address is not wrong, it is
+old. Keep it, dated, in the fact's history. The prompt only ever shows the current one.
 
-### Tests first, offline
+### Five facts, not fifty
 
-Every test uses `ScriptedModel`. Test the behaviour you would be most embarrassed to get
-wrong — usually the one that needs a person.
+Everything in the prompt is paid for on every model call, and the model attends less to
+each thing as the list grows. Newest first, capped.
 
-### Trace it into its own sessions
+### Forgetting is a feature
 
-When you run it for real, give each run a session named `project/<something>`, so
-`check_traces.py week-06` can find them and your portfolio can show them.
-
-### Evaluate, then fix one thing
-
-On Wednesday run your evals with a real model, find what fails, fix one thing — in
-code if you can, not only in the prompt — and run them again. `EVAL_REPORT.md` is that
-story, with the numbers.
+A customer may ask you to forget them, and in many places the law says you must. Delete
+their facts — only theirs — and say how many.
 
 ---
 
 ## Exercises
 
 ```bash
-pytest week-06/day-2 -v      # Tuesday: the agent and its tests
-pytest week-06/day-3 -v      # Wednesday: the evals and the report
-python3 check_traces.py week-06
+pytest week-06/day-2 -v
 ```
+
+Copy `tools.py` and `facts.py`, then write `stale.py`.
+
+---
+
+## Predict-then-run
+
+Update the same topic three times. Predict the length of its history, then check.
 
 ---
 

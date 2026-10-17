@@ -6,13 +6,13 @@ outside view. And one more for Fridays.
 
 | Role | File | When |
 |---|---|---|
-| **Advisor** | `advisor.md` | Day zero: your baseline interview. Week 6 Monday: choosing your problem |
+| **Advisor** | `advisor.md` | Day zero: your baseline interview. Week 7 Monday: choosing your problem |
 | **Librarian** | `librarian.md` | You need a source the week's reading and `SOURCES.md` do not give you |
 | **Tutor** | `tutor.md` | You have been stuck for twenty minutes |
 | **Editor** | `editor.md` | Your tests pass and you want to know if the work is good. Every written deliverable goes through it |
 | **Outside view** | `outside-view.md` | Once a week — the question at the bottom of the week's README |
 | **Defend** | `defend.md` | Friday, on your milestone, before your instructor sees it |
-| **Interviewer** | `interviewer.md` | Week 6: rehearsing the mock interview |
+| **Interviewer** | `interviewer.md` | Week 7: rehearsing the mock interview |
 
 ## How to use one
 

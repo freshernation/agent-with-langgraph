@@ -14,7 +14,7 @@
 ## Not yet
 
 Datasets, scores, a judge (week 4) · `async`, streaming, a server (week 5) · the
-Postgres checkpointer (week 5) · the long-term store · `interrupt_before` on compile —
+Postgres checkpointer (week 5) · the long-term store (week 6) · `interrupt_before` on compile —
 read about it, use `interrupt()` inside the node
 
 ---

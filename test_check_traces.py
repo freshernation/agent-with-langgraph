@@ -47,9 +47,9 @@ def test_week_04():
     assert not passed(check_traces.week_04(Source()))
 
 
-def test_week_06():
-    assert passed(check_traces.week_06(Source([trace(f"project/{n}") for n in range(5)])))
-    assert not passed(check_traces.week_06(Source([trace("c1/T1")] * 9)))
+def test_week_07():
+    assert passed(check_traces.week_07(Source([trace(f"project/{n}") for n in range(5)])))
+    assert not passed(check_traces.week_07(Source([trace("c1/T1")] * 9)))
 
 
 def test_run_reports_failure(capsys):

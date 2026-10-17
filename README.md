@@ -1,12 +1,12 @@
 # Agent With LangGraph
 
-Six weeks from the loop you wrote to a graph you can defend in an interview.
+Seven weeks from the loop you wrote to a graph you can defend in an interview.
 
 You wrote an AI agent by hand: the loop, its tools, a gate in front of anything
 dangerous, memory and evals. This course rebuilds it in **LangGraph**, so the
 framework is a translation of something you already understand — then uses it to build
 what is hard to build by hand: typed state, an agent that survives a restart, a human
-approval step, rewinding to an earlier step. Every run is traced and evaluated in
+approval step, rewinding to an earlier step, memory that lasts. Every run is traced and evaluated in
 **Langfuse**. In the last week you build an agent for a problem you chose, and defend
 it in a mock interview.
 
@@ -38,7 +38,7 @@ each step — on paper first.
 
 ---
 
-## The six weeks
+## The seven weeks
 
 | Week | | Milestone |
 |---|---|---|
@@ -47,7 +47,8 @@ each step — on paper first.
 | 3 | Memory and a human | **Project 1** — survives a restart mid-ticket, stops for approval before a refund, can be rewound |
 | 4 | Measure it | An eval suite built from real traces that fails a bad prompt change |
 | 5 | Ship it | **Project 2** — streaming over HTTP on a durable checkpointer, with an incident write-up |
-| 6 | Your agent, and the interview | **Project 3** — an agent for a problem you chose, a portfolio page, a mock interview |
+| 6 | Memory that lasts | Helpdesk remembers facts, past tickets and house rules — and forgets on request |
+| 7 | Your agent, and the interview | **Project 3** — an agent for a problem you chose, a portfolio page, a mock interview |
 
 Every test runs offline against a scripted model — no key, no cost. A Langfuse
 account is needed from day 1 and a real model key from week 1 day 4.

@@ -1,34 +1,39 @@
-# Day 1 — Choose, cut, draw
+# Day 1 — Facts that outlive a ticket
 
-> **By the end of today** you have one problem, a cut list for it, a graph on paper,
-> and the one eval that would prove it works.
+> **By the end of today** a fact Helpdesk learns in one ticket is there in the next,
+> for that customer only — and a card number is never stored.
 
 ---
 
 ## Read first
 
-- [ ] Your own `logs/signal-log.md` from weeks 1 to 5 — what you are good at, and what you avoided
-- [ ] Anthropic — [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents), again · 15 min
+- [ ] LangGraph — [Memory](https://docs.langchain.com/oss/python/langgraph/memory), short-term and long-term · 20 min
 
 ---
 
 ## What you need to know
 
-### Choose a problem with a person in it
+### A checkpoint is one ticket; a store is everything
 
-The best problems for this course have something a person does today, a mistake that
-matters, and a moment where a person should decide. That is where a checkpointer and
-an interrupt earn their place.
+The checkpointer saves a thread. A new ticket is a new thread and starts empty. The
+**store** is keyed by a namespace and a key, and every thread can read it. So
+`("customers", "c1", "facts")` is where c1's facts live, whichever ticket they arrive in.
 
-### Cut before you build
+### Tools reach the store through the runtime
 
-Write down three things you will be tempted to build and will not. The advisor will
-suggest some. Every one you cut on Monday is a day you get back.
+A tool that takes `runtime: ToolRuntime` gets `runtime.store` and `runtime.state` —
+filled in by LangGraph, invisible to the model. The customer comes from the state, so
+the model can never write to someone else's memory.
 
-### The one eval
+### Refuse before storing
 
-If you could run one check, which would tell you it works? Write it down now. On
-Wednesday you build it, and on Friday you defend it.
+A card number in memory is a card number in every future prompt, every trace and every
+backup. The tool refuses any long run of digits before anything is written.
+
+### The connection manages nothing
+
+`SqliteStore` runs its own transactions, so its connection is opened with
+`isolation_level=None`. Get this wrong and the first write fails.
 
 ---
 
@@ -38,10 +43,17 @@ Wednesday you build it, and on Friday you defend it.
 pytest week-06/day-1 -v
 ```
 
-Run `ai/advisor.md` with "week 6", then write `PROBLEM.md`.
+Copy `tools.py`, then write `facts.py`.
+
+---
+
+## Predict-then-run
+
+Remember a fact in thread T1, then open thread T2 for the same customer. Predict what
+`graph.get_state(T2).values` holds, and what `known_facts` says.
 
 ---
 
 ## Before you close the laptop
 
-Commit, push. Show your graph to someone and ask them what it does.
+Commit, push, fill in the signal log.

@@ -4,7 +4,7 @@
 
 ---
 
-You are my tutor for a six-week course on building agents with LangGraph, traced and evaluated in Langfuse. I wrote an agent loop by hand in an earlier course;
+You are my tutor for a seven-week course on building agents with LangGraph, traced and evaluated in Langfuse. I wrote an agent loop by hand in an earlier course;
 now I am learning the framework. I am in **Week [N], Day [N]**.
 I have been stuck for at least twenty minutes on the problem I am about to describe.
 
