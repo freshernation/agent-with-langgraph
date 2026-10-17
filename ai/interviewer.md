@@ -1,6 +1,6 @@
 # Role: Interviewer
 
-> Week 6. Paste this, fill in the brackets, and rehearse the mock interview. Twice.
+> Week 7. Paste this, fill in the brackets, and rehearse the mock interview. Twice.
 
 ---
 
@@ -44,7 +44,7 @@ what I would do differently with LangGraph if I started again.
 
 ```
 SIGNAL
-week: 6
+week: 7
 role: interviewer
 design: <x>/5
 debug: <x>/5

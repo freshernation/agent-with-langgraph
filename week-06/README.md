@@ -1,41 +1,45 @@
-# Week 6 — Your agent, and the interview
+# Week 6 — Memory that lasts
 
 > **Destination**
-> An agent for a problem you chose — drawn, built, tested, traced and evaluated in
-> four days — a portfolio page you would send an employer, and an hour with an
-> interviewer who will try to find what you do not understand.
+> Helpdesk remembers what it should about a customer across every ticket — facts,
+> what happened last time, and house rules from staff — refuses to remember what it
+> should not, and forgets when asked.
 
-**Project 3.** No new content. Everything from weeks 1 to 5, on your own problem.
+A checkpoint remembers one ticket. This week, memory that outlives the ticket.
 
 ---
 
 ## The week
 
-| Day | Folder | What you'll do |
+| Day | Folder | What you'll be able to do |
 |---|---|---|
-| Mon | `day-1/` | Choose the problem, write its cut list, draw the graph |
-| Tue–Wed | `day-2/`, `day-3/` | Build it in `project/`, test it, trace it, evaluate it |
-| Thu | `day-4/` | The portfolio page |
-| Fri | `milestone/` | **Project 3** — the mock interview |
+| Mon | `day-1/` | Keep facts about a customer in a store every ticket can read |
+| Tue | `day-2/` | Update a fact that has gone stale, keep its history, and forget on request |
+| Wed | `day-3/` | Record each ticket as an episode, and recall the ones that matter to a new ticket |
+| Thu | `day-4/` | Keep house rules only staff may write, and learn one from a refusal — with approval |
+| Fri | `milestone/` | Helpdesk with all three kinds of memory in its prompt |
 
 ---
 
-## The rule this week
+## The rule from this week on
 
-**Smaller than you think.** Four days. An agent with three nodes that you can defend
-beats one with nine that you cannot. If you are not cutting something on Tuesday, you
-chose too big.
+**Memory is information, never instruction — and the most shared memory needs the
+most trust.** A fact about one customer affects one customer. A house rule affects
+every customer, so only staff may write one.
 
 ---
 
-## Monday morning
+## Three kinds of memory
 
-Paste `ai/advisor.md` into a fresh chat and say "week 6". It will help you choose
-between three problems.
+| Kind | Example | Lives in | Who writes it |
+|---|---|---|---|
+| Fact | "prefers email" | `("customers", c1, "facts")` | Helpdesk, during a ticket |
+| Episode | "1 Oct: kettle refund, sent for approval" | `("customers", c1, "episodes")` | Helpdesk, after a ticket |
+| Procedure | "offer the tracking number first" | `("helpdesk", "procedures")` | Staff only |
 
 ---
 
 ## Outside-view question
 
-> *An interviewer has an hour to decide if you can do a job they cannot watch you do.
-> What would convince you?*
+> *A family doctor has seen you for twenty years. What do they write in your notes,
+> what do they never write, and what do they read before you sit down?*

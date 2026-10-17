@@ -2,18 +2,23 @@
 
 ## Allowed
 
-**Everything from weeks 1 to 5.** Nothing new.
+**Everything from weeks 1 to 5**, plus:
 
-## Not this week
+- LangGraph's store: `SqliteStore`, `InMemoryStore`, namespaces, `put`, `get`,
+  `search`, `delete`, `setup()`
+- `compile(store=...)`; `ToolRuntime` in a tool; `Runtime` and `RunnableConfig` in a node
+- Ranking by word overlap, by hand
 
-Anything on the cut list — multi-agent, subgraphs, retrieval, a front end — unless
-your problem genuinely cannot be done without it, and then only after you have
-written down why in `PROBLEM.md`'s cut list. Your instructor will ask.
+## Not yet
+
+Embeddings and the store's semantic index — read about, not graded · memory shared
+between different agents · deleting old episodes on a schedule · encrypting memory
 
 ---
 
-## Why nothing new
+## Why recall by word overlap
 
-Four days is enough to build something small properly or something large badly. The
-interview asks about the small thing: why each node, what is in the state, which eval
-you trust least. New content would be a fifth thing to half-understand.
+The store can rank by embeddings, and in production you might let it. But an embedding
+is another model, another key and another bill, and it hides why something was
+recalled. Word overlap, by hand, shows you exactly what "relevant" means — and the
+week 4 evals can tell you when it is not good enough.

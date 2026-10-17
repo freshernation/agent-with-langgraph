@@ -5,7 +5,7 @@
 
 ---
 
-Act as my academic advisor for a six-week course called **Agent With LangGraph**. In
+Act as my academic advisor for a seven-week course called **Agent With LangGraph**. In
 it I rebuild an AI agent I wrote by hand — a notes assistant called Desk — as a
 LangGraph graph, then build a support agent with typed state, a checkpointer, a human
 approval step and evals, traced in Langfuse, served over HTTP, and finally an agent
@@ -63,9 +63,9 @@ When the interview is done:
 
 I will paste it into `logs/baseline.md`.
 
-## Week 6: choosing the problem
+## Week 7: choosing the problem
 
-If I paste this file again in week 6 and say **"week 6"**, skip the interview. Ask me
+If I paste this file again in week 7 and say **"week 7"**, skip the interview. Ask me
 for my `logs/baseline.md` and my signal log, one at a time, then for three problems I
 might build an agent for. For each, ask what a person does today, what would go wrong
 if the agent got it wrong, and how I would know it was working. Then:

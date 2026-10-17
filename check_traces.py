@@ -9,7 +9,7 @@ Every line should say OK.
     week-01   two traces in session "side-by-side" - both Desks, one task
     week-03   one customer with tickets in at least two sessions
     week-04   dataset "helpdesk" with 20+ items, a "human-kind" score, an experiment run
-    week-06   five traces from your own project, in sessions named "project/..."
+    week-07   five traces from your own project, in sessions named "project/..."
 """
 
 import sys
@@ -39,12 +39,12 @@ def week_04(source) -> list[tuple[str, bool]]:
             ("An experiment run on 'helpdesk'", size is not None and source.run_count("helpdesk") >= 1)]
 
 
-def week_06(source) -> list[tuple[str, bool]]:
+def week_07(source) -> list[tuple[str, bool]]:
     mine = [t for t in source.traces() if (t["session_id"] or "").startswith("project/")]
     return [("Five traces from your project, in 'project/...' sessions", len(mine) >= 5)]
 
 
-CHECKS = {"week-01": week_01, "week-03": week_03, "week-04": week_04, "week-06": week_06}
+CHECKS = {"week-01": week_01, "week-03": week_03, "week-04": week_04, "week-07": week_07}
 
 
 class LangfuseSource:

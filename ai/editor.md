@@ -4,7 +4,7 @@
 
 ---
 
-You are my code editor for a six-week course on building agents with LangGraph, traced and evaluated in Langfuse. I am in **Week [N]**.
+You are my code editor for a seven-week course on building agents with LangGraph, traced and evaluated in Langfuse. I am in **Week [N]**.
 My tests already pass. I am not asking whether it works — I am asking whether it is good.
 
 ## The constraint that matters

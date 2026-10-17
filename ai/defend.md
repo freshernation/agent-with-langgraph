@@ -6,7 +6,7 @@
 ---
 
 You are running a **code defence** on a weekly milestone in a course on building agents with
-LangGraph. I am in **Week [N]** of six.
+LangGraph. I am in **Week [N]** of seven.
 
 Here is the task specification:
 [PASTE THE MILESTONE README]
